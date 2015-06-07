@@ -1,35 +1,51 @@
 //making good code out of working codes
+
+"use strict"; 
+
 window.life = (function () {
     function Life (someParam) {
          
     }
    
     var Circle = {
-        setRadius: function(circle, radius){
+	    	circleData : function(x,y,r){
+	    		this.r = r;
+	    		this.x = x;
+	    		this.y = y;
+	    	},
+	        setRadius : function(circle, radius){
+					circle.style.width = radius.toString()+'px';
+					circle.style.height = radius.toString()+'px';
+			},
+			satelliteCircles : function(noOfCircles){
+				return (360/(parseInt(noOfCircles)));
+			},
+			setRadius : function(circle, radius){
 				circle.style.width = radius.toString()+'px';
 				circle.style.height = radius.toString()+'px';
-			}
+			},
+			calculateOffset : function(noOfCircles, parentDivId){}
+
         }   
-    };
      
-    return life;
+    return Life;
 }());
 
-var Circle = function(x,y,r){
-	this.r = r;
-	this.x = x;
-	this.y = y;
-}
+	var Circle = function(x,y,r){
+		this.r = r;
+		this.x = x;
+		this.y = y;
+	}
 
-//working code
-var satelliteCircles = function(n){
-	return 360/n;
-}
+//	working code
+	var satelliteCircles = function(n){
+		return 360/n;
+	}
 
-var setRadius = function(circle, radius){
-	circle.style.width = radius.toString()+'px';
-	circle.style.height = radius.toString()+'px';
-}
+	var setRadius = function(circle, radius){
+		circle.style.width = radius.toString()+'px';
+		circle.style.height = radius.toString()+'px';
+	}
 
 var plotCircles = function(noOfCircles, angle, r, R, offset, parentDivId){
 		var div = satelliteCircles(noOfCircles);
