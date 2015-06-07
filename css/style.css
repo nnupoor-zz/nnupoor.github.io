@@ -1,0 +1,31 @@
+body{
+    background-color: #f4f4f4;
+} 
+
+header{
+    border-bottom: 1px solid #e5e5e5;
+}
+
+#parentdiv
+    {
+        position: relative;
+       /* width: 150px;
+        /*height: 150px;*/
+        background-color: #ffab00;
+        border-radius: 150px;
+        margin: 150px 0 0 150px;
+        color: #fff;
+        text-align: center;
+        line-height: 150px;
+    }
+
+.div2
+    {
+        position: absolute;
+        width: 90px;
+        height: 90px;
+        background-color: #0033a6;
+        border-radius: 50%;
+        color: #fff;
+        opacity: 0.8
+    }
