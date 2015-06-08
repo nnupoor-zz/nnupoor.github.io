@@ -1,31 +1,52 @@
 body{
     background-color: #f4f4f4;
+    font-family: 'Lato', sans-serif;
+    color : #fff;
+    font-size: 20px;
+    margin: auto;
 } 
 
 header{
     border-bottom: 1px solid #e5e5e5;
 }
 
-#parentdiv
-    {
+.container{
+
+}
+
+.parentdiv{
         position: relative;
-       /* width: 150px;
-        /*height: 150px;*/
-        background-color: #ffab00;
-        border-radius: 150px;
-        margin: 150px 0 0 150px;
+        border-radius: 50%;
+        margin: 170px;
         color: #fff;
         text-align: center;
         line-height: 170px;
+        display : inline-block;
+    }
+.parentdiv:nth-of-type(1) { 
+        background-color: #ffab00;
+    }
+.parentdiv:nth-of-type(2) { 
+        background-color: #30ffe7;
+    }
+.parentdiv:nth-of-type(3) { 
+        background-color: #380993;
     }
 
-.div2
-    {
-        position: absolute;
-        width: 90px;
-        height: 90px;
+.div2{
+     position: absolute;
+     border-radius: 50%;
+     color: #fff;
+     opacity: 0.8;
+     font-size: 14px;
+     line-height: 120px;
+}
+.childhood {
         background-color: #0033a6;
-        border-radius: 50%;
-        color: #fff;
-        opacity: 0.8
     }
+.teen {
+        background-color: #cf0018;
+}
+.adult{
+        background-color: #a542ed;
+}
