@@ -3,12 +3,12 @@
 "use strict"; 
 
 window.life = (function () {
-			var self;
+			// var this;
     		var Circle = function(x,y,r){
 		    		this.r = r;
 		    		this.x = x;
 		    		this.y = y;
-		    		self=this;
+		    		// this=this;
 	    	}
 	        Circle.prototype.setRadius = function(circle, radius){
 					circle.style.width = radius.toString()+'px';
@@ -20,22 +20,22 @@ window.life = (function () {
 			Circle.prototype.calculateOffset = function(parentDivId){
 				//how to use previous functions.
 					var parentCircle = document.getElementById(parentDivId);
-					self.setRadius(parentCircle, self.R);
+					this.setRadius(parentCircle, this.R);
 					var offsetToParentCenter = parseInt(parentCircle.offsetWidth / 2);
-					var offsetToChildCenter = (self.r) / 2;
+					var offsetToChildCenter = (this.r) / 2;
 					var totalOffset = (offsetToParentCenter - offsetToChildCenter);
 					return totalOffset;
 			}
-			Circle.prototype.plotSatelliteCircles = function(noOfCircles, angle, offset, parentDivId, className){
-					var div = self.satelliteCircles(noOfCircles);
+			Circle.prototype.plotSatelliteCircles = function(noOfCircles, angle, offset, parentDivId, className, text){
+					var div = this.satelliteCircles(noOfCircles);
 					var radius = offset;
-					var offset = self.calculateOffset(parentDivId);
+					var offset = this.calculateOffset(parentDivId);
 					for(var i=1; i<=noOfCircles; i++){
 						var parentdiv = document.getElementById(parentDivId);
 						var childDiv = document.createElement('div');
 						
 						childDiv.className = className;
-						self.setRadius(childDiv, r);
+						this.setRadius(childDiv, r);
 						
 						var y = Math.sin(((div*i)+(div-angle)) * (Math.PI / 180)) * radius;
 						var x = Math.cos(((div*i)+(div-angle)) * (Math.PI / 180)) * radius;
@@ -47,7 +47,7 @@ window.life = (function () {
 			}
 			Circle.prototype.setText = function(selectorId, text){
 						var circle = document.querySelectorAll(selectorId);
-						circle.innerHTML = text.toString();
+						circle.innerText = text.toString();
 			}
 			Circle.prototype.setCircleColor = function(circle, color){
 						var clr = color.toString();
@@ -90,10 +90,6 @@ var adult = [
 ];
 
 
-
-
-
-
 	var satelliteCircles = function(n){
 		return 360/n;
 	}
@@ -121,16 +117,32 @@ var adult = [
 				setRadius(childDiv, r);
 				var y = Math.sin(((div*i)+(div-angle)) * (Math.PI / 180)) * radius;
 				var x = Math.cos(((div*i)+(div-angle)) * (Math.PI / 180)) * radius;
-				childDiv.style.top = (y + totalOffset).toString() + "px";
-				childDiv.style.left = (x + totalOffset).toString() + "px";
-
-				// setCircleText(childDiv,text[i]);
-				parentCircle.appendChild(childDiv);
+				//childDiv.style.transform += 'translateY('+((y + totalOffset).toString())+'px)';
+    			//childDiv.style.transform += 'translateX('+((x + totalOffset).toString())+'px)';
+    			$(childDiv).animate({left: '+='+(x + totalOffset).toString(), top: '+='+(y + totalOffset).toString()}, 500);
+				// childDiv.style.top = (y + totalOffset).toString() + "px";
+				// childDiv.style.left = (x + totalOffset).toString() + "px";
+				// childDiv.style.display = 'none';
 				childDiv.innerText = data[i-1].text;
+				//$(childDiv).appendTo('#'+parentDivId).show('slow');
+				//callback function to append child with fadein
+				// setCircleText(childDiv,text[i]);
+				makeCircle(parentCircle,childDiv);
+				
 			}
 	}
+	var makeCircle = function(parentCircle, childCircle){
+				parentCircle.appendChild(childCircle);
+	}
 
-plotCircles(4, 0, 120, 180, 170, 'Golden_Days', childhood, 'childhood');
-plotCircles(6, 0, 120, 180, 170, 'Rebel_Phase', teen, 'teen');
-plotCircles(5, 90, 120, 180, 170, 'Shit_Gets_Real', adult, 'adult');
+
+$(function() {
+  
+  	plotCircles(4, 0, 120, 180, 170, 'Golden_Days', childhood, 'childhood');
+	plotCircles(6, 0, 120, 180, 170, 'Rebel_Phase', teen, 'teen');
+	plotCircles(5, 90, 120, 180, 170, 'Shit_Gets_Real', adult, 'adult');
+ 
+});
+
+
 
