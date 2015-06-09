@@ -6,12 +6,27 @@ body{
     margin: auto;
 } 
 
-header{
-    border-bottom: 1px solid #e5e5e5;
+#header{
+    border-bottom: 1px solid #fafafa;
+    height : 200px;
+}
+#header>div{
+    display: inline-block;
+    box-sizing : border-box;
+}
+
+.image{
+    border-radius: 3px;
+    width: 150px;
+    height: 150px;
+    padding:3px;
+    border:1px solid #f5f5f5;
+    background-color:#f4f4f4;
+    margin: 20px 10px 80px 20px;
 }
 
 .container{
-
+    border-bottom: 1px solid #f4f4f4;
 }
 
 .parentdiv{
@@ -22,6 +37,7 @@ header{
         text-align: center;
         line-height: 170px;
         display : inline-block;
+        display: none;
         /*opacity: 0.5;*/
     }
 .parentdiv:nth-of-type(1) { 
@@ -41,6 +57,8 @@ header{
      opacity: 0.8;
      font-size: 14px;
      line-height: 120px;
+     z-index: -50;
+     border : 1px solid transparent;
 }
 .childhood {
         background-color: #0033a6;

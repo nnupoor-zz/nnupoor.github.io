@@ -89,7 +89,7 @@ var adult = [
 	{text : 'made the website'}
 ];
 
-
+var posX,posY;
 	var satelliteCircles = function(n){
 		return 360/n;
 	}
@@ -106,7 +106,8 @@ var adult = [
 			var div = satelliteCircles(noOfCircles);
 			var radius = offset;
 			var parentCircle = document.getElementById(parentDivId);
-			setRadius(parentCircle, R);
+			//setRadius(parentCircle, R);
+			//makeParentCircle(parentDivId, R);
 			var offsetToParentCenter = parseInt(parentCircle.offsetWidth / 2);
 			var offsetToChildCenter = r / 2;
 			var totalOffset = (offsetToParentCenter - offsetToChildCenter);
@@ -117,32 +118,56 @@ var adult = [
 				setRadius(childDiv, r);
 				var y = Math.sin(((div*i)+(div-angle)) * (Math.PI / 180)) * radius;
 				var x = Math.cos(((div*i)+(div-angle)) * (Math.PI / 180)) * radius;
-				//childDiv.style.transform += 'translateY('+((y + totalOffset).toString())+'px)';
-    			//childDiv.style.transform += 'translateX('+((x + totalOffset).toString())+'px)';
+				
+				posY = (y + totalOffset).toString(); posX = (x + totalOffset).toString();
+
     			$(childDiv).animate({left: '+='+(x + totalOffset).toString(), top: '+='+(y + totalOffset).toString()}, 500);
-				// childDiv.style.top = (y + totalOffset).toString() + "px";
-				// childDiv.style.left = (x + totalOffset).toString() + "px";
+				
 				// childDiv.style.display = 'none';
 				childDiv.innerText = data[i-1].text;
-				//$(childDiv).appendTo('#'+parentDivId).show('slow');
-				//callback function to append child with fadein
-				// setCircleText(childDiv,text[i]);
-				makeCircle(parentCircle,childDiv);
+				parentCircle.appendChild(childDiv);
 				
 			}
 	}
-	var makeCircle = function(parentCircle, childCircle){
-				parentCircle.appendChild(childCircle);
+	var makeParentCircle = function(parentCircleId, R){
+			var parentCircle = document.getElementById(parentCircleId);
+			setRadius(parentCircle, R);	
+			$(parentCircle).fadeIn('slow');
+			parentCircle.style.display = 'inline-block';
 	}
 
 
 $(function() {
-  
-  	plotCircles(4, 0, 120, 180, 170, 'Golden_Days', childhood, 'childhood');
-	plotCircles(6, 0, 120, 180, 170, 'Rebel_Phase', teen, 'teen');
-	plotCircles(5, 90, 120, 180, 170, 'Shit_Gets_Real', adult, 'adult');
- 
+	makeParentCircle('Golden_Days', 180);
+	makeParentCircle('Rebel_Phase', 180);
+	makeParentCircle('Shit_Gets_Real', 180);
+ });
+
+$('.div2').hover(function(e){
+	e.stopPropogation();
+	e.preventDefault();
 });
+
+$('#Golden_Days').mouseenter(function(e){	
+	plotCircles(4, 0, 120, 180, 170, 'Golden_Days', childhood, 'childhood');
+       return false;
+});
+
+$('#Rebel_Phase').mouseenter(function(e){
+	plotCircles(6, 0, 120, 180, 170, 'Rebel_Phase', teen, 'teen');
+	return false;
+}).mouseout(function(e){
+	// $('.teen').animate({left: '-='+posX, top: '-='+posY}, 500);
+});
+
+$('#Shit_Gets_Real').mouseenter(function(e){
+	plotCircles(5, 90, 120, 180, 170, 'Shit_Gets_Real', adult, 'adult');
+	return false;
+});
+
+  
+ 
+
 
 
 
