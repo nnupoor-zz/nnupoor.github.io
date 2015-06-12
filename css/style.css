@@ -5,14 +5,21 @@ body{
     font-size: 20px;
     margin: auto;
 } 
-
-#header{
-    border-bottom: 1px solid #fafafa;
-    height : 200px;
+a{
+    text-decoration: none;
+    padding: 5px 20px ; 
 }
-#header>div{
-    display: inline-block;
-    box-sizing : border-box;
+/*#1BBC9B*/
+#header{
+    border-bottom: 1px solid #f4f4f4;
+    padding : 60px;
+    color: #000;
+}
+#header>span{
+    color: #04bfbf;
+    font-size: 50px; 
+    padding-left: 70px;
+    font-family: 'Droid Sans', sans-serif;
 }
 
 .image{
@@ -30,42 +37,78 @@ body{
 }
 
 .parentdiv{
-        position: relative;
-        border-radius: 50%;
-        margin: 170px;
-        color: #fff;
-        text-align: center;
-        line-height: 170px;
-        display : inline-block;
-        display: none;
-        /*opacity: 0.5;*/
-    }
+    position: relative;
+    border-radius: 50%;
+    margin: 170px;
+    color: #fff;
+    text-align: center;
+    line-height: 170px;
+    display : inline-block;
+    display: none;
+    /*opacity: 0.5;*/
+}
+.parentdiv:hover{
+
+}
 .parentdiv:nth-of-type(1) { 
-        background-color: #ffab00;
-    }
+    background-color: #ffab00;
+    border: 1px solid #ffab00;
+}
+.parentdiv:nth-of-type(1):hover { 
+    background-color: rgba(255,187,0,0.8);
+    border: 1px solid transparent;
+}
 .parentdiv:nth-of-type(2) { 
-        background-color: #31a354;
-    }
+    background-color: #31a354;
+    border: 1px solid #31a354;
+}
+.parentdiv:nth-of-type(2):hover { 
+    background-color: rgba(49,163,84,0.8);
+}
 .parentdiv:nth-of-type(3) { 
-        background-color: #9e9ac8;
-    }
+    background-color: #9999cc;
+    border: 1px solid #9999cc;
+}
+.parentdiv:nth-of-type(3):hover { 
+    background-color: rgba(153,153,204,0.8);
+}
 
 .div2{
-     position: absolute;
-     border-radius: 50%;
-     color: #fff;
-     opacity: 0.8;
-     font-size: 14px;
-     line-height: 120px;
-     z-index: -50;
-     border : 1px solid transparent;
+    position: absolute;
+    border-radius: 50%;
+    color: #fff;
+    opacity: 0.8;
+    font-size: 14px;
+    line-height: 120px;
+    z-index: -50;
+    border : 1px solid transparent;
 }
 .childhood {
-        background-color: #0033a6;
-    }
+    background-color: #0033a6;
+}
 .teen {
-        background-color: #e6550d;
+    background-color: #e6550d;
 }
 .adult{
-        background-color: #3182bd;
+    background-color: #3182bd;
+}
+
+footer{
+    padding: 10px 0;
+    font-size: 30px;
+    text-align: center; 
+}
+i{
+    color: #04bfbf;
+}
+
+.alpha60 {
+    /* Fallback for web browsers that don't support RGBa */
+    background-color: rgb(0, 0, 0);
+    /* RGBa with 0.6 opacity */
+    background-color: rgba(0, 0, 0, 0.6);
+    /* For IE 5.5 - 7*/
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    /* For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
 }
