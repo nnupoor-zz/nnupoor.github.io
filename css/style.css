@@ -7,13 +7,14 @@ body{
 } 
 a{
     text-decoration: none;
-    padding: 5px 20px ; 
+    padding: 0px 20px ; 
 }
-/*#1BBC9B*/
+
 #header{
-    border-bottom: 1px solid #f4f4f4;
+    border-bottom: 1px solid #f2f2f2;
     padding : 60px;
     color: #000;
+    background-color: #fff;
 }
 #header>span{
     color: #04bfbf;
@@ -22,18 +23,10 @@ a{
     font-family: 'Droid Sans', sans-serif;
 }
 
-.image{
-    border-radius: 3px;
-    width: 150px;
-    height: 150px;
-    padding:3px;
-    border:1px solid #f5f5f5;
-    background-color:#f4f4f4;
-    margin: 20px 10px 80px 20px;
-}
+
 
 .container{
-    border-bottom: 1px solid #f4f4f4;
+    border-bottom: 1px solid #f2f2f2;
 }
 
 .parentdiv{
@@ -45,7 +38,6 @@ a{
     line-height: 170px;
     display : inline-block;
     display: none;
-    /*opacity: 0.5;*/
 }
 .parentdiv:hover{
 
@@ -73,7 +65,7 @@ a{
     background-color: rgba(153,153,204,0.8);
 }
 
-.div2{
+.childCircle{
     position: absolute;
     border-radius: 50%;
     color: #fff;
@@ -94,7 +86,7 @@ a{
 }
 
 footer{
-    padding: 10px 0;
+    padding: 20px 0;
     font-size: 30px;
     text-align: center; 
 }
