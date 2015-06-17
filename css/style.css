@@ -43,10 +43,10 @@ a{
 @media screen and (min-width: 1501px){
     .parentdiv{
         margin: 170px;
-        line-height: 180px;
+        line-height: 170px;
     } 
     .childCircle{
-        line-height: 170px;
+        line-height: 120px;
     }
 }
 
