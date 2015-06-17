@@ -90,7 +90,7 @@ a{
     color: #fff;
     opacity: 0.8;
     font-size: 14px;
-    line-height: 120px;
+    /*line-height: 120px;*/
     z-index: -50;
     border : 1px solid transparent;
 }
