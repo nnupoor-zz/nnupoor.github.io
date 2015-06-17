@@ -1,6 +1,7 @@
 //making good code out of working codes
 
 "use strict"; 
+
 var childhood = [
   {text : 'Born 24/1/91' },
   {text : 'Started School'},
@@ -29,7 +30,7 @@ window.circle = (function () {
   var Circle = Circle || {};
 
   Circle = function(props){
-
+    //enter checks if props values are correct
     var defaults = {
       r: 170,
       id: "default-circle",
@@ -132,7 +133,7 @@ window.circle = (function () {
     var posX = (self.totalOffset===0) ? ths.calculateOffset() : self.totalOffset ;
     var $childCircleClass = $('.'+self.childClass);
 
-    $childCircleClass.animate({left: posX, top: posX}, 1000);
+    $childCircleClass.animate({left: posX, top: posX}, 1500);
   }
 
   Circle.prototype.slideCircle = function(){
@@ -150,36 +151,65 @@ window.circle = (function () {
 
 }());
 
+//write different data based on screen sizes
+(function(){
+  var x = { 
+    r: 0,
+    id: "",
+    data: [],
+    childCircleCount: 0,
+    childRadius: 0,
+    childOffset: 0,
+    childAngle: 0,
+    childClass: ""
+  }
 
-var childCircle = new circle({ 
-      r: 180,
-      id: "Golden_Days",
-      data: childhood,
-      childCircleCount: childhood.length,
-      childRadius: 120,
-      childOffset: 170,
-      childAngle: 0,
-      childClass: "childhood"
-    });
+var screenWidth = $(window).width();
 
-var teenCircle = new circle({ 
-      r: 180,
-      id: "Rebel_Phase",
-      data: teen,
-      childCircleCount: teen.length,
-      childRadius: 120,
-      childOffset: 170,
-      childAngle: 0,
-      childClass: "teen"
-    });
+if(screenWidth>1500){
+  x.r = 180;
+  x.childRadius = 120;
+  x.childOffset = 180;
+} else if(screenWidth>700 && screenWidth<1500){
+  x.r = 140;
+  x.childRadius = 100;
+  x.childOffset = 140;
+}else{}
 
-var adultCircle = new circle({ 
-      r: 180,
-      id: "Shit_Gets_Real",
-      data: adult,
-      childCircleCount: adult.length,
-      childRadius: 120,
-      childOffset: 170,
-      childAngle: 0,
-      childClass: "adult"
-    });
+var childCircle = new circle( jQuery.extend(x, {id: "Golden_Days", data: childhood, childCircleCount : childhood.length, childAngle: 0, childClass: 'childhood'}) );
+var teenCircle = new circle( jQuery.extend(x, {id: "Rebel_Phase", data: teen, childCircleCount : teen.length, childAngle: 0, childClass: 'teen'}) );
+var adultCircle = new circle( jQuery.extend(x, {id: "Shit_Gets_Real", data: adult, childCircleCount : adult.length, childAngle: 90, childClass: 'adult'}) );
+
+})();
+
+
+
+
+
+
+
+// var childCircle = new circle({ 
+     
+//     });
+
+// var teenCircle = new circle({ 
+//       r: 180,
+//       id: "Rebel_Phase",
+//       data: teen,
+//       childCircleCount: teen.length,
+//       childRadius: 120,
+//       childOffset: 180,
+//       childAngle: 0,
+//       childClass: "teen"
+//     });
+
+// var adultCircle = new circle({ 
+//       r: 180,
+//       id: "Shit_Gets_Real",
+//       data: adult,
+//       childCircleCount: adult.length,
+//       childRadius: 120,
+//       childOffset: 180,
+//       childAngle: 90,
+//       childClass: "adult"
+//     });

@@ -26,16 +26,35 @@ a{
 
 
 .container{
-    border-bottom: 1px solid #f2f2f2;
+    border-bottom: 1px solid #f2f2f2;   
+}
+
+/*write parent div's css for different screens*/
+@media screen and (max-width: 1500px){
+    .parentdiv{
+        margin: 170px 150px;
+        line-height: 150px;
+    } 
+    .childCircle{
+        line-height: 100px;
+    }
+}
+
+@media screen and (min-width: 1501px){
+    .parentdiv{
+        margin: 170px;
+        line-height: 180px;
+    } 
+    .childCircle{
+        line-height: 170px;
+    }
 }
 
 .parentdiv{
     position: relative;
-    border-radius: 50%;
-    margin: 170px;
+    border-radius: 70%;
     color: #fff;
     text-align: center;
-    line-height: 170px;
     display : inline-block;
     display: none;
 }
