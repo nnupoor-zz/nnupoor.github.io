@@ -1,0 +1,125 @@
+body{
+    background-color: #fff;
+    font-family: 'Lato', sans-serif;
+    color : #fff;
+    font-size: 20px;
+    margin: auto;
+} 
+a{
+    text-decoration: none;
+    padding: 0px 20px ; 
+}
+
+#header{
+    border-bottom: 1px solid #f2f2f2;
+    padding : 60px;
+    color: #000;
+    background-color: #fff;
+}
+#header>span{
+    color: #04bfbf;
+    font-size: 50px; 
+    padding-left: 70px;
+    font-family: 'Droid Sans', sans-serif;
+}
+
+
+
+.container{
+    border-bottom: 1px solid #f2f2f2;   
+}
+
+/*write parent div's css for different screens*/
+@media screen and (max-width: 1500px){
+    .parentdiv{
+        margin: 170px 150px;
+        line-height: 150px;
+    } 
+    .childCircle{
+        line-height: 100px;
+    }
+}
+
+@media screen and (min-width: 1501px){
+    .parentdiv{
+        margin: 170px;
+        line-height: 170px;
+    } 
+    .childCircle{
+        line-height: 120px;
+    }
+}
+
+.parentdiv{
+    position: relative;
+    border-radius: 70%;
+    color: #fff;
+    text-align: center;
+    display : inline-block;
+    display: none;
+}
+.parentdiv:hover{
+
+}
+.parentdiv:nth-of-type(1) { 
+    background-color: #ffab00;
+    border: 1px solid #ffab00;
+}
+.parentdiv:nth-of-type(1):hover { 
+    background-color: rgba(255,187,0,0.8);
+    border: 1px solid transparent;
+}
+.parentdiv:nth-of-type(2) { 
+    background-color: #31a354;
+    border: 1px solid #31a354;
+}
+.parentdiv:nth-of-type(2):hover { 
+    background-color: rgba(49,163,84,0.8);
+}
+.parentdiv:nth-of-type(3) { 
+    background-color: #9999cc;
+    border: 1px solid #9999cc;
+}
+.parentdiv:nth-of-type(3):hover { 
+    background-color: rgba(153,153,204,0.8);
+}
+
+.childCircle{
+    position: absolute;
+    border-radius: 50%;
+    color: #fff;
+    opacity: 0.8;
+    font-size: 14px;
+    /*line-height: 120px;*/
+    z-index: -50;
+    border : 1px solid transparent;
+}
+.childhood {
+    background-color: #0033a6;
+}
+.teen {
+    background-color: #e6550d;
+}
+.adult{
+    background-color: #3182bd;
+}
+
+footer{
+    padding: 20px 0;
+    font-size: 30px;
+    text-align: center; 
+}
+i{
+    color: #04bfbf;
+}
+
+.alpha60 {
+    /* Fallback for web browsers that don't support RGBa */
+    background-color: rgb(0, 0, 0);
+    /* RGBa with 0.6 opacity */
+    background-color: rgba(0, 0, 0, 0.6);
+    /* For IE 5.5 - 7*/
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    /* For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+}
