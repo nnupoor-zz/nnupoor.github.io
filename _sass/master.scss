@@ -179,6 +179,9 @@ body {
   .footer-col-2 {
     .social-media-list > li {
       display: block;
+      &:not(.ac_twitter) {
+        display: none;
+      }
     }
   }
   .footer-col-3 {
