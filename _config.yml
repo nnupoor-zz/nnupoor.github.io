@@ -27,10 +27,19 @@ instagram_username: nupoor_neha
 google_analytics: UA-118800450-1
 
 # Build settings
+disqus.shortname: neha
 markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "posts" 
+    values:
+      layout: "post"
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

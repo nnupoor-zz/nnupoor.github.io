@@ -15,7 +15,7 @@ $text-material:     #263238;
  *
  */
 body {
-  border-top: 3px solid #111;
+  border-top: 3px solid $text-material; 
 }
 
 /**
@@ -221,13 +221,13 @@ body {
   list-style: none;
 
   > li {
-    margin-bottom: $spacing-unit;
+    margin-bottom: $spacing-unit / 6;
   }
 }
 
 .post-link {
   display: initial;
-  @include relative-font-size(1.2);
+  @include relative-font-size(1.1);
   text-decoration: underline;
   color: $pink-material;
   &:visited {
@@ -240,10 +240,17 @@ body {
   font-style: italic;
   margin-left: $spacing-unit / 4;
   color: $grey-material;
+  @include media-query($on-palm) {
+    display: block;
+  }
 }
 .wordcount {
   float: right;
   line-height: 2.21;
+  @include media-query($on-palm) {
+    float: none;
+    clear: both;
+  }
   .count {
     font-weight: 600;
     font-style: normal;
