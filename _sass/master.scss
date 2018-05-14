@@ -9,7 +9,7 @@ $post-title:        #880e4f;
 $purple-material:   #9c27b0;
 $dark-material:     #616161;
 $text-material:     #263238;
-
+$border-top:        #78d6e4;
 /**
  * Body
  *
@@ -23,7 +23,7 @@ body {
  */
 .site-header {
   border-bottom: 0;
-  border-top: 7px solid $aqua-material;
+  border-top: 7px solid $border-top;
   // background: $grey-material;
   // Positioning context for the mobile navigation icon
   position: relative;
